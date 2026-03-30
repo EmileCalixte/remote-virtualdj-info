@@ -1,0 +1,30 @@
+{
+  "name": "remote-virtualdj-info",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "push": "node push/push.js",
+    "server": "node server/server.js",
+    "pull": "node pull/pull.js",
+    "format": "oxfmt pull push server",
+    "lint": "oxlint pull push server",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "oxfmt": "^0.42.0",
+    "oxlint": "^1.57.0"
+  },
+  "lint-staged": {
+    "*.{js,json,md}": [
+      "oxlint --fix",
+      "oxfmt"
+    ]
+  },
+  "packageManager": "pnpm@10.19.0"
+}
