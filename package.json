@@ -5,14 +5,17 @@
   "keywords": [],
   "license": "MIT",
   "author": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "push": "node push/push.js",
-    "server": "node server/server.js",
-    "pull": "node pull/pull.js",
+    "push": "node --env-file=.env push/push.js",
+    "socketserver": "node --env-file=.env server/server.js",
+    "pull": "node --env-file=.env pull/pull.js",
     "format": "oxfmt pull push server",
     "lint": "oxlint pull push server",
     "prepare": "husky"
+  },
+  "dependencies": {
+    "ws": "^8.20.0"
   },
   "devDependencies": {
     "husky": "^9.1.7",
