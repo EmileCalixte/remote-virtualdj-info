@@ -33,3 +33,7 @@ pnpm push
 ```sh
 pnpm pull
 ```
+
+## Liens utiles
+
+[Documentation VDJScript](https://virtualdj.com/manuals/virtualdj/appendix/vdjscriptverbs.html)

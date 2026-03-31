@@ -15,8 +15,8 @@ const POLL_INTERVAL = parseInt(POLL_INTERVAL_STR, 10) * 1000;
 
 async function fetchVirtualDJInfo() {
   const [artistRes, titleRes] = await Promise.all([
-    fetch(`${VIRTUALDJ_BASE_URL}/query?script=deck%20active%20get%20artist`),
-    fetch(`${VIRTUALDJ_BASE_URL}/query?script=deck%20active%20get%20title`),
+    fetch(`${VIRTUALDJ_BASE_URL}/query?script=deck%20active%20get_artist`),
+    fetch(`${VIRTUALDJ_BASE_URL}/query?script=deck%20active%20get_title_remix`),
   ]);
 
   const artist = (await artistRes.text()).trim();
