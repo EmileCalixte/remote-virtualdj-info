@@ -33,7 +33,7 @@ function connect() {
   ws.on("open", () => {
     console.log("Connected to server");
 
-    interval = setInterval(async () => {
+    async function poll() {
       try {
         const { artist, title } = await fetchVirtualDJInfo();
 
@@ -45,7 +45,11 @@ function connect() {
       } catch (err) {
         console.error("Failed to fetch VirtualDJ info:", err.message);
       }
-    }, POLL_INTERVAL);
+    }
+
+    poll();
+    console.log(`Polling VirtualDJ every ${POLL_INTERVAL / 1000}s`);
+    interval = setInterval(poll, POLL_INTERVAL);
   });
 
   ws.on("close", () => {
@@ -57,5 +61,4 @@ function connect() {
   ws.on("error", (err) => console.error("WebSocket error:", err.code ?? err.message));
 }
 
-console.log(`Polling VirtualDJ every ${POLL_INTERVAL / 1000}s`);
 connect();
