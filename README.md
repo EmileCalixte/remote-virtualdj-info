@@ -18,6 +18,10 @@ Lancer le serveur :
 
 ```sh
 pnpm socketserver
+
+# Avec pm2
+pm2 start server/server.js --name remote-virtualdj-info --node-args="--env-file=.env"
+pm2 save
 ```
 
 ### Côté VirtualDJ
