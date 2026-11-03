@@ -22,6 +22,9 @@ pnpm socketserver
 # Avec pm2
 pm2 start server/server.js --name remote-virtualdj-info --node-args="--env-file=.env"
 pm2 save
+
+# Avec Docker
+docker compose up -d --build
 ```
 
 ### Côté VirtualDJ
